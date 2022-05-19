@@ -1,4 +1,6 @@
-package bobo.code;
+package com.bobocode.hw4;
+
+import bobocode.util.Node;
 
 import java.util.List;
 import java.util.Objects;
