@@ -20,7 +20,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RandomFieldComparator<T> implements Comparator<T> {
 
     public static void main(String[] args) {
-        var cmp = new RandomFieldComparator<>(Account.class, false);
+        final var cmp = new RandomFieldComparator<>(Account.class, false);
         System.out.println(cmp);
         Accounts.generateAccountList(10).stream().sorted(cmp).forEach(System.out::println);
     }
@@ -48,8 +48,8 @@ public class RandomFieldComparator<T> implements Comparator<T> {
             throw new IllegalArgumentException("There are no available fields");
         }
 
-        int index = ThreadLocalRandom.current().nextInt(fields.length);
-        var random = fields[index];
+        final int index = ThreadLocalRandom.current().nextInt(fields.length);
+        final var random = fields[index];
         random.setAccessible(true);
 
         return random;
@@ -63,8 +63,8 @@ public class RandomFieldComparator<T> implements Comparator<T> {
     @SneakyThrows
     @SuppressWarnings({"rawtypes", "unchecked"})
     public int compare(T o1, T o2) {
-        var c1 = (Comparable) field.get(o1);
-        var c2 = (Comparable) field.get(o2);
+        final var c1 = (Comparable) field.get(o1);
+        final var c2 = (Comparable) field.get(o2);
 
         if (c1 == null && c2 == null) {
             return 0;

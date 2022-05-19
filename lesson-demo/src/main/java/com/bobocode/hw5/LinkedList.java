@@ -8,7 +8,7 @@ import java.util.Stack;
 public class LinkedList {
 
     public static void main(String[] args) {
-        var head = createLinkedList(4, 3, 9, 1);
+        final var head = createLinkedList(4, 3, 9, 1);
         printReversedRecursively(head);
         System.out.println();
         printReversedUsingStack(head);
