@@ -1,7 +1,6 @@
 package com.bobocode.hw9;
 
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 
 import java.util.Arrays;
 import java.util.concurrent.ForkJoinPool;
@@ -11,14 +10,12 @@ import java.util.stream.IntStream;
 
 public class ForkJoinMergeSort {
 
-    @SneakyThrows
     public static void main(String[] args) {
         final var arr = generateArray(40);
         System.out.println(Arrays.toString(arr));
 
         ForkJoinPool.commonPool().invoke(new MergeSortTask(arr));
         System.out.println(Arrays.toString(arr));
-
     }
 
     @RequiredArgsConstructor
@@ -36,14 +33,14 @@ public class ForkJoinMergeSort {
                 return;
             }
 
-            var mid = arr.length / 2;
-            var left = new int[mid];
-            var right = new int[arr.length - mid];
+            final var mid = arr.length / 2;
+            final var left = new int[mid];
+            final var right = new int[arr.length - mid];
             System.arraycopy(arr, 0, left, 0, mid);
             System.arraycopy(arr, mid, right, 0, arr.length - mid);
 
-            var leftTask = new MergeSortTask(left);
-            var rightTask = new MergeSortTask(right);
+            final var leftTask = new MergeSortTask(left);
+            final var rightTask = new MergeSortTask(right);
 
             leftTask.fork();
             rightTask.compute();
