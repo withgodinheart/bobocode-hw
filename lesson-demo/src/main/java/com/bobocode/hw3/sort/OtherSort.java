@@ -8,7 +8,7 @@ public class OtherSort {
         checkTimeDynamically(OtherSort::sort, 5, 1_000, 101_000, 5_000);
     }
 
-    private static void sort(int[] arr) {
+    public static void sort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {

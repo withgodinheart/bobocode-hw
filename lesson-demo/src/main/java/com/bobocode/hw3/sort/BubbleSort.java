@@ -8,7 +8,7 @@ public class BubbleSort {
         checkTimeDynamically(BubbleSort::sort, 5, 1_000, 101_000, 5_000);
     }
 
-    private static void sort(int[] arr) {
+    public static void sort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {

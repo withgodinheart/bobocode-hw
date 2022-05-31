@@ -1,8 +1,12 @@
 package com.bobocode.hw3.sort;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Consumer;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Util {
 
     public static void checkTimeDynamically(final Consumer<int[]> fnc, final int attempts, final int start, final int end, final int step) {

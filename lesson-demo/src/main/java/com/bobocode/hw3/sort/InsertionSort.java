@@ -8,7 +8,7 @@ public class InsertionSort {
         checkTimeDynamically(InsertionSort::sort, 5, 1_000, 101_000, 5_000);
     }
 
-    private static void sort(int[] arr) {
+    public static void sort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             final var pickedCard = arr[i];
             var currentPosition = i;

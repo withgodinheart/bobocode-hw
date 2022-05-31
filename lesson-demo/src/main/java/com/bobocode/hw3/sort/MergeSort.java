@@ -8,7 +8,7 @@ public class MergeSort {
         checkTimeDynamically(MergeSort::sort, 5, 1_000, 101_000, 5_000);
     }
 
-    private static void sort(int[] arr) {
+    public static void sort(int[] arr) {
         if (arr.length < 2) {
             return;
         }
@@ -26,7 +26,7 @@ public class MergeSort {
         merge(arr, leftArr, rightArr);
     }
 
-    private static void merge(int[] arr, int[] leftArr, int[] rightArr) {
+    public static void merge(int[] arr, int[] leftArr, int[] rightArr) {
         int l = 0, r = 0, i = 0;
         final int leftArrSize = leftArr.length;
         final int rightArrSize = rightArr.length;
