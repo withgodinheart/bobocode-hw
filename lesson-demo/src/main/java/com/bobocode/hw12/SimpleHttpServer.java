@@ -23,6 +23,7 @@ public class SimpleHttpServer {
     private static final String ENDPOINT = "/hello";
     private static final String HOST = "localhost";
     private static final String HTTP_VERSION = "HTTP/1.1";
+    private static final String CONTENT_TYPE = "Content-Type: application/json";
     private static final ExecutorService EXECUTORS = Executors.newFixedThreadPool(50);
 
     public static void main(String[] args) {
@@ -110,8 +111,8 @@ public class SimpleHttpServer {
         Map<String, String> jsonMessages = supplier.get();
 
         String json = new ObjectMapper().writeValueAsString(jsonMessages);
-        writer.println("HTTP/1.1 " + code.codeValue);
-        writer.println("Content-Type: application/json");
+        writer.println(HTTP_VERSION + " " + code.codeValue);
+        writer.println(CONTENT_TYPE);
         writer.println("Date: " + ZonedDateTime.now().toString());
         writer.println("Content-Length: " + json.length());
         writer.println("");
