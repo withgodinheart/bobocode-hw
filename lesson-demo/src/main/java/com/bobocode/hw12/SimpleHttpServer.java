@@ -5,11 +5,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Function;
@@ -24,6 +23,9 @@ public class SimpleHttpServer {
     private static final String HOST = "localhost";
     private static final String HTTP_VERSION = "HTTP/1.1";
     private static final String CONTENT_TYPE = "Content-Type: application/json";
+    private static final DateTimeFormatter DATETIME_FORMATTER = DateTimeFormatter
+            .ofPattern("EEE, dd MMM yyyy HH:mm:ss z", Locale.ENGLISH)
+            .withZone(ZoneId.of("GMT"));
     private static final ExecutorService EXECUTORS = Executors.newFixedThreadPool(50);
 
     public static void main(String[] args) {
@@ -108,12 +110,14 @@ public class SimpleHttpServer {
         OutputStream outputStream = socket.getOutputStream();
         PrintWriter writer = new PrintWriter(new OutputStreamWriter(outputStream));
 
-        Map<String, String> jsonMessages = supplier.get();
+        String date = DATETIME_FORMATTER.format(Instant.now());
 
+        Map<String, String> jsonMessages = supplier.get();
         String json = new ObjectMapper().writeValueAsString(jsonMessages);
+        
         writer.println(HTTP_VERSION + " " + code.codeValue);
         writer.println(CONTENT_TYPE);
-        writer.println("Date: " + ZonedDateTime.now().toString());
+        writer.println("Date: " + date);
         writer.println("Content-Length: " + json.length());
         writer.println("");
         writer.println(json);
