@@ -24,7 +24,6 @@ public class EveningServlet extends HttpServlet {
         } else {
             withCustomSession(req, resp);
         }
-        withCustomSession(req, resp);
     }
 
     private void withDefaultSession(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
