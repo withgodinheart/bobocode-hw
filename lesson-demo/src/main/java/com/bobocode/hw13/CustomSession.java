@@ -12,6 +12,9 @@ public class CustomSession {
     private final static String CUSTOM_SESSION_COOKIE_NAME = "CUSTOM_SESS_ID";
     private static Map<String, Map<String, String>> sessionMap = new ConcurrentHashMap<>();
 
+    private CustomSession() {
+    }
+    
     public static Optional<String> getByKey(HttpServletRequest req, String key) {
         var allData = getAll(req);
         return Optional.ofNullable(allData.get(key));
