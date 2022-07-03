@@ -76,7 +76,7 @@ public class SecureSocketConnection {
              var writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
              var reader = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-            sendRequest(writer, HttpMethod.GET, url);
+            sendRequest(writer, HttpMethod.HEAD, url);
             BiFunction<BufferedReader, String, String> getRedirectLink = SecureSocketConnection::getHeaderValue;
             return getRedirectLink.apply(reader, "Location");
         } catch (Exception e) {
