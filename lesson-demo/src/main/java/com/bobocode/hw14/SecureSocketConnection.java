@@ -45,7 +45,7 @@ public class SecureSocketConnection {
     }
 
     private static void getMaxImage(List<String> urls) {
-        urls.stream()
+        urls.parallelStream()
                 .map(SecureSocketConnection::getRedirectLink)
                 .filter(url -> !url.isEmpty())
                 .map(url ->
