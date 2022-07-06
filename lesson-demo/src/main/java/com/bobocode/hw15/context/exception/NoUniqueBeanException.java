@@ -1,0 +1,16 @@
+package com.bobocode.lesson15.hw15.context.exception;
+
+public class NoUniqueBeanException extends RuntimeException {
+
+    public NoUniqueBeanException() {
+        super();
+    }
+
+    public NoUniqueBeanException(String message) {
+        super(message);
+    }
+
+    public NoUniqueBeanException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
