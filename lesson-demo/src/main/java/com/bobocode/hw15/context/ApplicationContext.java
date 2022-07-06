@@ -1,7 +1,7 @@
-package com.bobocode.lesson15.hw15.context;
+package com.bobocode.hw15.context;
 
-import com.bobocode.lesson15.hw15.context.exception.NoSuchBeanException;
-import com.bobocode.lesson15.hw15.context.exception.NoUniqueBeanException;
+import com.bobocode.hw15.context.exception.NoSuchBeanException;
+import com.bobocode.hw15.context.exception.NoUniqueBeanException;
 
 import java.util.Map;
 
