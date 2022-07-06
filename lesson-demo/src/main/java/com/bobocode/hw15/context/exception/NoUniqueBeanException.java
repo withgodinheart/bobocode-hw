@@ -1,4 +1,4 @@
-package com.bobocode.lesson15.hw15.context.exception;
+package com.bobocode.hw15.context.exception;
 
 public class NoUniqueBeanException extends RuntimeException {
 
