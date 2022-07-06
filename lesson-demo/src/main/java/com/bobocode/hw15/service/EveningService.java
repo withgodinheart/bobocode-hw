@@ -1,6 +1,6 @@
-package com.bobocode.lesson15.hw15.service;
+package com.bobocode.hw15.service;
 
-import com.bobocode.lesson15.hw15.context.Bean;
+import com.bobocode.hw15.context.Bean;
 
 @Bean("evening")
 public class EveningService implements DayService {
