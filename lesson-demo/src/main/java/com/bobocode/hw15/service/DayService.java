@@ -1,4 +1,4 @@
-package com.bobocode.lesson15.hw15.service;
+package com.bobocode.hw15.service;
 
 public interface DayService {
     void greeting();
