@@ -14,7 +14,7 @@ public class MergeSort {
         ints.forEach(el -> System.out.print(el + " "));
     }
 
-    private static <T extends Comparable<T>> void sort(final List<T> list) {
+    public static <T extends Comparable<T>> void sort(final List<T> list) {
         if (list.size() < 2) {
             return;
         }

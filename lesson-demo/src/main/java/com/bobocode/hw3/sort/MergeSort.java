@@ -26,7 +26,7 @@ public class MergeSort {
         merge(arr, leftArr, rightArr);
     }
 
-    public static void merge(int[] arr, int[] leftArr, int[] rightArr) {
+    private static void merge(int[] arr, int[] leftArr, int[] rightArr) {
         int l = 0, r = 0, i = 0;
         final int leftArrSize = leftArr.length;
         final int rightArrSize = rightArr.length;
