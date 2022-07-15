@@ -1,9 +1,9 @@
-package com.bobocode.hw15;
+package com.bobocode.hw15.yv;
 
-import com.bobocode.hw15.context.ApplicationContextImpl;
-import com.bobocode.hw15.service.DayService;
-import com.bobocode.hw15.service.EveningService;
-import com.bobocode.hw15.service.MorningService;
+import com.bobocode.hw15.yv.context.ApplicationContextImpl;
+import com.bobocode.hw15.yv.service.DayService;
+import com.bobocode.hw15.yv.service.EveningService;
+import com.bobocode.hw15.yv.service.MorningService;
 
 public class AppContextDemo {
 

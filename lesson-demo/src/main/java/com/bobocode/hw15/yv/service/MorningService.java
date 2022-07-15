@@ -1,6 +1,6 @@
-package com.bobocode.hw15.service;
+package com.bobocode.hw15.yv.service;
 
-import com.bobocode.hw15.context.Bean;
+import com.bobocode.hw15.yv.context.Bean;
 
 @Bean("morning")
 public class MorningService implements DayService {

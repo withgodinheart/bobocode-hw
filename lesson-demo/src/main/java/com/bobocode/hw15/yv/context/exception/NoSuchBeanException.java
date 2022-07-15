@@ -1,4 +1,4 @@
-package com.bobocode.hw15.context.exception;
+package com.bobocode.hw15.yv.context.exception;
 
 public class NoSuchBeanException extends RuntimeException {
 
