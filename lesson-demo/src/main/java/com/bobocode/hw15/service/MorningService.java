@@ -1,4 +1,4 @@
-package com.bobocodehw15.service;
+package com.bobocode.hw15.service;
 
 import com.bobocode.hw15.context.Bean;
 
