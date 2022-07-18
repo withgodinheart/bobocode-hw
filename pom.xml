@@ -13,6 +13,7 @@
         <module>java-fundamentals-util</module>
         <module>lesson-demo</module>
         <module>trimmer</module>
+        <module>av-trimmer</module>
     </modules>
 
     <properties>
