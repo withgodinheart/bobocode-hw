@@ -1,4 +1,4 @@
-package com.bobocode.hw15.av;
+package com.bobocode.hw15.av.util;
 
 import lombok.ToString;
 

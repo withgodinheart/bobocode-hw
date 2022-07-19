@@ -1,7 +1,8 @@
-package com.bobocode.hw15.av;
+package com.bobocode.hw15.av.ctx;
 
 import com.bobocode.hw15.yv.context.exception.NoSuchBeanException;
 import com.bobocode.hw15.yv.context.exception.NoUniqueBeanException;
+import lombok.Getter;
 import lombok.SneakyThrows;
 import org.reflections.Reflections;
 
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 
 public class ApplicationContextImpl implements ApplicationContext {
 
+    @Getter
     private final Map<String, Object> ctx = new HashMap<>();
 
     public ApplicationContextImpl(String packageName) {
@@ -21,7 +23,8 @@ public class ApplicationContextImpl implements ApplicationContext {
     @Override
     public <T> T getBean(final Class<T> beanType) throws NoSuchBeanException, NoUniqueBeanException {
         var list = ctx.values().stream()
-                .filter(beanType::isInstance)
+//                .filter(beanType::isInstance)
+                .filter(el -> beanType.isAssignableFrom(el.getClass()))
                 .toList();
 
         if (list.size() > 1) throw new NoUniqueBeanException();
@@ -39,8 +42,7 @@ public class ApplicationContextImpl implements ApplicationContext {
     @Override
     public <T> Map<String, T> getAllBeans(final Class<T> beanType) {
         return ctx.entrySet().stream()
-                .filter(beanType::isInstance)
-                // ? ASK .filter(entry -> beanType.isAssignableFrom(entry.getValue().getClass()))
+                .filter(entry -> beanType.isAssignableFrom(entry.getValue().getClass()))
                 .collect(Collectors.toMap(Map.Entry::getKey, entry -> beanType.cast(entry.getValue())));
     }
 

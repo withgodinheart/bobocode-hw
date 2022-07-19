@@ -1,4 +1,4 @@
-package com.bobocode.hw15.av;
+package com.bobocode.hw15.av.ctx;
 
 import com.bobocode.hw15.yv.context.exception.NoSuchBeanException;
 import com.bobocode.hw15.yv.context.exception.NoUniqueBeanException;
