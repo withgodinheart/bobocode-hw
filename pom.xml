@@ -14,6 +14,9 @@
         <module>lesson-demo</module>
         <module>trimmer</module>
         <module>av-trimmer</module>
+        <module>hw-19</module>
+        <module>hw-21</module>
+        <module>flux</module>
     </modules>
 
     <properties>

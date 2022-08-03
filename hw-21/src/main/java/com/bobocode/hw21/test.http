@@ -1,0 +1,8 @@
+POST http://localhost:8080/steal/pictures/
+Content-Type: application/json
+
+{
+  "sol": 14
+}
+
+###

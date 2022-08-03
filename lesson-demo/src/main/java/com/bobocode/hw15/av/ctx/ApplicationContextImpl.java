@@ -5,6 +5,7 @@ import com.bobocode.hw15.yv.context.exception.NoUniqueBeanException;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import org.reflections.Reflections;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +41,7 @@ public class ApplicationContextImpl implements ApplicationContext {
     }
 
     @Override
-    public <T> Map<String, T> getAllBeans(final Class<T> beanType) {
+    public <T> Map<String, T> getAllBeans(@Autowired final Class<T> beanType) {
         return ctx.entrySet().stream()
                 .filter(entry -> beanType.isAssignableFrom(entry.getValue().getClass()))
                 .collect(Collectors.toMap(Map.Entry::getKey, entry -> beanType.cast(entry.getValue())));
