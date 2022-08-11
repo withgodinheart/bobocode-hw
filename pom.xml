@@ -12,10 +12,7 @@
         <module>boot</module>
         <module>java-fundamentals-util</module>
         <module>lesson-demo</module>
-        <module>trimmer</module>
-        <module>av-trimmer</module>
-        <module>hw-19</module>
-        <module>hw-21</module>
+        <module>context</module>
         <module>flux</module>
     </modules>
 
