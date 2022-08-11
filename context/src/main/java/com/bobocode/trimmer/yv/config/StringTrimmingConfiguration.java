@@ -1,6 +1,6 @@
-package com.bobocode.yv.config;
+package com.bobocode.trimmer.yv.config;
 
-import com.bobocode.yv.bpp.TrimmedAnnotationBeanPostProcessor;
+import com.bobocode.trimmer.yv.bpp.TrimmedAnnotationBeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

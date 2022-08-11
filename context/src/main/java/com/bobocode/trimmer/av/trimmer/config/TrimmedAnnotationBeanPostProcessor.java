@@ -1,6 +1,6 @@
-package com.bobocode.av.trimmer.config;
+package com.bobocode.trimmer.av.trimmer.config;
 
-import com.bobocode.av.trimmer.annotation.Trimmed;
+import com.bobocode.trimmer.av.trimmer.annotation.Trimmed;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.cglib.proxy.Enhancer;

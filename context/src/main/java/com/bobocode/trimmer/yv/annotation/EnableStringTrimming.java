@@ -1,6 +1,6 @@
-package com.bobocode.yv.annotation;
+package com.bobocode.trimmer.yv.annotation;
 
-import com.bobocode.yv.config.StringTrimmingConfiguration;
+import com.bobocode.trimmer.yv.config.StringTrimmingConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;

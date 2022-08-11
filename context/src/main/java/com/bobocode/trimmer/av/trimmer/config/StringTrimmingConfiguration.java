@@ -1,4 +1,4 @@
-package com.bobocode.av.trimmer.config;
+package com.bobocode.trimmer.av.trimmer.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

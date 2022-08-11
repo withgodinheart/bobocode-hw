@@ -1,6 +1,6 @@
-package com.bobocode.yv.bpp;
+package com.bobocode.trimmer.yv.bpp;
 
-import com.bobocode.yv.annotation.Trimmed;
+import com.bobocode.trimmer.yv.annotation.Trimmed;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.cglib.proxy.Enhancer;

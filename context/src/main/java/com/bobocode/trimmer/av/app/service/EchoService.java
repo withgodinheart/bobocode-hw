@@ -1,6 +1,6 @@
-package com.bobocode.av.app.service;
+package com.bobocode.trimmer.av.app.service;
 
-import com.bobocode.av.trimmer.annotation.Trimmed;
+import com.bobocode.trimmer.av.trimmer.annotation.Trimmed;
 import org.springframework.stereotype.Service;
 
 @Service

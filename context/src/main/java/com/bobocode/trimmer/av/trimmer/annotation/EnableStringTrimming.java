@@ -1,6 +1,6 @@
-package com.bobocode.av.trimmer.annotation;
+package com.bobocode.trimmer.av.trimmer.annotation;
 
-import com.bobocode.av.trimmer.config.StringTrimmingConfiguration;
+import com.bobocode.trimmer.av.trimmer.config.StringTrimmingConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;

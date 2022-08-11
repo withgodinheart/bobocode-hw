@@ -1,4 +1,4 @@
-package com.bobocode.av.trimmer.annotation;
+package com.bobocode.trimmer.av.trimmer.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
