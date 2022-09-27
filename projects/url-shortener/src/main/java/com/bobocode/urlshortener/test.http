@@ -1,0 +1,9 @@
+POST http://localhost:8080/short
+Content-Type: application/json
+
+{
+  "title": "FlyWay tutorial",
+  "url": "https://www.baeldung.com/database-migrations-with-flyway"
+}
+
+###
