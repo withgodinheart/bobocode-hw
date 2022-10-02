@@ -18,15 +18,6 @@ public class PersonService {
 
     @Transactional
     @EventListener(classes = ContextRefreshedEvent.class)
-    public void run() {
-        personRepository.findAll().forEach(System.out::println);
-        personRepository.streamAllBy().forEach(System.out::println);
-        System.out.println(personRepository.findById(2L).orElseThrow().getFirst_name());
-        System.out.println(personRepository.myMethod(1L));
-    }
-
-    @Transactional
-    @EventListener(classes = ContextRefreshedEvent.class)
     public void insert() {
         var person = personRepository.findById(2L).orElseThrow();
         var notes = IntStream.range(0, 10)
