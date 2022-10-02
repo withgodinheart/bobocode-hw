@@ -1,6 +1,8 @@
 package com.bobocode.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,7 +23,9 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString(exclude = "person")
+@Builder
 public class Note {
 
     @Id
@@ -31,7 +35,7 @@ public class Note {
     @Column(nullable = false)
     private String body;
 
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private LocalDateTime created_at;
 
     @JsonIgnore
