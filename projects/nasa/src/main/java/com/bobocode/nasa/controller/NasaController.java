@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.websocket.server.PathParam;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -25,13 +25,13 @@ public class NasaController {
     private final NasaService nasaService;
 
     @GetMapping(value = "/{sol}", produces = MediaType.IMAGE_PNG_VALUE)
-    public byte[] get(@PathVariable Integer sol, @PathParam("camera") Optional<String> camera) {
+    public byte[] get(@PathVariable Integer sol, @RequestParam("camera") Optional<String> camera) {
         log.info("******* PNG ENDPOINT");
         return nasaService.run(sol, camera);
     }
 
     @GetMapping(value = "/{sol}")
-    public ResponseEntity<?> getUri(@PathVariable Integer sol, @PathParam("camera") Optional<String> camera) {
+    public ResponseEntity<?> getUri(@PathVariable Integer sol, @RequestParam("camera") Optional<String> camera) {
         log.info("******* RESPONSE_ENTITY ENDPOINT");
         var uri = nasaService.getUri(sol, camera);
 
