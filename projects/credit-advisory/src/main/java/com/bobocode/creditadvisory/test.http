@@ -1,0 +1,4 @@
+POST http://localhost:8080/advisors/5/assign
+Content-Type: application/json;
+
+###
