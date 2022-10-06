@@ -1,9 +1,9 @@
-GET http://localhost:8080/nasa/10
+GET http://localhost:8080/nasa/500?camera=NAVCAM
 Accept: image/png
 
 ###
 
-GET http://localhost:8080/nasa/10
+GET http://localhost:8080/nasa/500?camera=NAVCAM
 Accept: application/json
 
 ###

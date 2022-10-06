@@ -1,5 +1,6 @@
 package com.bobocode.nasa.controller;
 
+import com.bobocode.nasa.dto.ResponseDto;
 import com.bobocode.nasa.service.NasaService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
@@ -25,9 +25,11 @@ public class NasaController {
     private final NasaService nasaService;
 
     @GetMapping(value = "/{sol}", produces = MediaType.IMAGE_PNG_VALUE)
-    public byte[] get(@PathVariable Integer sol, @RequestParam("camera") Optional<String> camera) {
+    public ResponseEntity<?> get(@PathVariable Integer sol, @RequestParam("camera") Optional<String> camera) {
         log.info("******* PNG ENDPOINT");
-        return nasaService.run(sol, camera);
+        var img = nasaService.run(sol, camera);
+
+        return ResponseEntity.ok(img);
     }
 
     @GetMapping(value = "/{sol}")
@@ -38,8 +40,10 @@ public class NasaController {
         return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).location(uri).build();
     }
 
-    @ExceptionHandler({NoSuchElementException.class})
-    public ResponseEntity<Object> handleException() {
-        return ResponseEntity.notFound().build();
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<?> handleException() {
+        log.info("******* EXCEPTION_HANDLER");
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseDto("Picture was not found"));
     }
 }
