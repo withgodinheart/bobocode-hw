@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class InsertionSort {
+public class InsertionSortGeneric {
 
     public static void main(String[] args) {
         var integers = List.of(1, 4, 3, 1, 9, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4);
@@ -13,7 +13,7 @@ public class InsertionSort {
         System.out.println(result);
     }
 
-    public static <T> List<T> sort(List<T> list, Comparator<T> cmp) {
+    public static <T> List<T> sort(List<T> list, Comparator<? super T> cmp) {
         list = new ArrayList<>(list);
 
         for (var i = 1; i < list.size(); i++) {
