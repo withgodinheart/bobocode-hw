@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  cache:
+    type: redis
+
+logging:
+  level:
+    root: info
+
+service:
+  picture:
+    url: http://localhost:8080
+    path: /mars/pictures/largest
