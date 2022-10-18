@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    host: 93.175.204.87
+    listener:
+      simple:
+        default-requeue-rejected: false
+        retry:
+          enabled: false
+          max-attempts: 1
+
+nasa:
+  api:
+    url: https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos
+    key: i4pu32wtY7zad8ZSWak3YAdJId3kgDt4lhNEGIto
