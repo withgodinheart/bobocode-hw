@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 /**
  * {@link FileReaders} provides an API that allow to read whole file into a {@link String} by file name.
  */
-public class FileReaders {
+public class  FileReaders {
 
     public static void main(String[] args) {
         System.out.println(FileReaders.readWholeFile("lesson-demo/src/main/java/com/bobocode/my/FileReaders.java"));
