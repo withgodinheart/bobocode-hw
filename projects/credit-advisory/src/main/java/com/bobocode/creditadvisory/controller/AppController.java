@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,7 +21,8 @@ public class AppController {
     private final AppService appService;
 
     @PostMapping("/{id}/assign")
-    public ResponseEntity<?> assign(@PathVariable Long id) {
+    public @ResponseBody
+    ResponseEntity<?> assign(@PathVariable Long id) {
         var application = appService.assign(id);
 
         return ResponseEntity.ok(new SuccessDto(application.getId()));

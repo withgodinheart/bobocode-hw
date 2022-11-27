@@ -1,7 +1,6 @@
-package com.bobocode.my;
+package com.bobocode.bobo;
 
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public class LambdaVsMethodReference {
 

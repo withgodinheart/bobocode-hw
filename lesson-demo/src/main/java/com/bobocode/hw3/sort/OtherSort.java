@@ -1,11 +1,9 @@
 package com.bobocode.hw3.sort;
 
-import static com.bobocode.hw3.sort.Util.checkTimeDynamically;
-
 public class OtherSort {
 
     public static void main(String[] args) {
-        checkTimeDynamically(OtherSort::sort, 5, 1_000, 101_000, 5_000);
+        Util.checkTimeDynamically(OtherSort::sort, 5, 1_000, 101_000, 5_000);
     }
 
     public static void sort(int[] arr) {

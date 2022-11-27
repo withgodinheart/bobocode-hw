@@ -17,6 +17,7 @@
         <module>boot</module>
         <module>flux</module>
         <module>datasource</module>
+        <module>spring</module>
     </modules>
 
     <properties>
